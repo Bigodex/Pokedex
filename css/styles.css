@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background: #3a3a3a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container img {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.container {
+    background: #e40f0f;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    border: 5px solid #000;
+    box-shadow: 5px 5px 0 #6d6d6d;
+    position: relative;
+    z-index: 0;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    z-index: 0; /* Coloca o ::after atrás do conteúdo */
+    pointer-events: none;
+}
+
+.pokedex-screen {
+    background: #8b8b8b;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 8px;
+}
+
+#pokemonSearch {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 0.9em;
+    background: #c4c4c4;
+    color: #000;
+}
+
+#searchButton {
+    background: #ffd700;
+    color: #000;
+    border: 2px solid #000;
+    padding: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    box-shadow: 2px 2px 0 #000;
+    transition: all 0.1s;
+}
+
+#searchButton:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.pokemon-card {
+    background: #c4c4c4;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 15px;
+    color: #000;
+    position: relative;
+}
+
+.pokemon-image {
+    width: 150px;
+    height: 150px;
+    image-rendering: pixelated;
+    border: 2px solid #000;
+    background: #fff;
+    margin: 0 auto;
+    display: block;
+}
+
+.details-section h2 {
+    color: #e40f0f;
+    margin: 15px 0;
+    font-size: 1.2em;
+    text-shadow: 2px 2px #fff;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    margin: 5px;
+    font-size: 0.7em;
+    background: #fff;
+    color: #000;
+}
+
+.stats-container {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.stat-bar {
+    height: 10px;
+    background: #c4c4c4;
+    border: 1px solid #000;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: #e40f0f;
+}
+
+.evolution-chain {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.evolution-stage {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.evolution-stage img {
+    width: 60px;
+    height: 60px;
+    image-rendering: pixelated;
+}
+
+.loading {
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8em;
+    background: #c4c4c4;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.error {
+    color: #e40f0f;
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/*=============================*/
+
+/* Responsividade para telas pequenas (até 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Ajusta o padding geral */
+    }
+
+    .container img {
+        width: 260px;
+        height: auto; /* Reduz a largura da imagem */
+    }
+
+    .container {
+        max-width: 90%; /* Reduz a largura do container */
+        padding: 15px; /* Ajusta o padding */
+    }
+
+    .pokedex-screen {
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .search-container {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        gap: 5px; /* Reduz o espaço entre os itens */
+    }
+
+    #pokemonSearch {
+        font-size: 0.8em;
+        width: 100%; /* Garante que o input ocupe toda a largura */
+    }
+
+    #searchButton {
+        padding: 5px 10px; /* Ajusta o botão */
+        font-size: 0.8em;
+    }
+
+    .pokemon-card {
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .pokemon-image {
+        width: 100px;
+        height: 100px; /* Reduz o tamanho da imagem */
+    }
+
+    .details-section h2 {
+        font-size: 1em; /* Reduz o tamanho do título */
+    }
+
+    .type-badge {
+        font-size: 0.8em; /* Reduz o tamanho das badges */
+        padding: 3px 8px;
+    }
+
+    .stats-container {
+        padding: 8px;
+        font-size: 0.7em; /* Ajusta o padding */
+    }
+
+    .stat-bar {
+        height: 8px;
+        margin-bottom: 10px; /* Reduz a altura da barra */
+    }
+
+    .evolution-chain {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        gap: 5px;
+        font-size: 1em;
+    }
+
+    .evolution-stage img {
+        width: 200px;
+        height: 200px; /* Reduz o tamanho das imagens */
+    }
+
+    .loading, .error {
+        font-size: 0.7em; /* Reduz o tamanho do texto */
+        padding: 10px;
+    }
+}
+
+/*=============================*/
+
+/* Responsividade para telas médias (601px a 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        padding: 15px; /* Ajusta o padding geral */
+    }
+
+    .container img {
+        width: 320px;
+        height: auto; /* Ajusta a largura da imagem */
+    }
+
+    .container {
+        max-width: 80%; /* Ajusta a largura do container */
+        padding: 20px; /* Ajusta o padding */
+    }
+
+    .pokedex-screen {
+        padding: 12px; /* Ajusta o padding */
+    }
+
+    .search-container {
+        gap: 8px; /* Ajusta o espaço entre os itens */
+    }
+
+    #pokemonSearch {
+        font-size: 0.85em;
+    }
+
+    #searchButton {
+        padding: 8px 15px; /* Ajusta o botão */
+        font-size: 0.85em;
+    }
+
+    .pokemon-card {
+        padding: 12px; /* Ajusta o padding */
+    }
+
+    .pokemon-image {
+        width: 120px;
+        height: 120px; /* Ajusta o tamanho da imagem */
+    }
+
+    .details-section h2 {
+        font-size: 1.1em; /* Ajusta o tamanho do título */
+    }
+
+    .type-badge {
+        font-size: 0.85em; /* Ajusta o tamanho das badges */
+        padding: 4px 9px;
+    }
+
+    .stats-container {
+        padding: 9px;
+        font-size: 0.75em; /* Ajusta o padding */
+    }
+
+    .stat-bar {
+        height: 9px;
+        margin-bottom: 12px; /* Ajusta a altura da barra */
+    }
+
+    .evolution-chain {
+        gap: 8px; /* Ajusta o espaço entre os itens */
+    }
+
+    .evolution-stage img {
+        width: 150px;
+        height: 150px; /* Ajusta o tamanho das imagens */
+    }
+
+    .loading, .error {
+        font-size: 0.75em; /* Ajusta o tamanho do texto */
+        padding: 12px;
+    }
+}
+
+
