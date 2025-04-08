@@ -1,0 +1,251 @@
+aside {
+    position: absolute;
+    top: 10.5%;
+    right: 24%;
+    width: 25em;
+    height: 40em;
+    padding: 15px;
+    background-color: #D30A40;
+    border: 2px solid #000;
+    border-left: none;
+    border-radius: 20px;
+    margin-top: 3em;
+    box-shadow: -4px 8px 0px #333, -7px 6px 0px #000;
+  }
+  
+  aside .logo {
+    width: 100%;
+    height: auto;
+    margin-top: -3em;
+  }
+  
+  .pokemon-info {
+    margin-top: -3.5em;
+    padding: 1em;
+    background-color: #e3e3e3;
+    border: 3px solid #000;
+    border-radius: 10px;
+    height: 27em;
+    overflow-y: auto;
+  }
+  
+  .pokemon-info h2 {
+    font-size: clamp(14px, 5vw, 20px);
+    font-weight: 600;
+    color: #3a444d;
+    margin: 0.5em 0;
+  }
+  
+  .pokemon-info ul,
+  .pokemon__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+  }
+  
+  .pokemon-info li,
+  .stat {
+    font-size: clamp(12px, 4vw, 14px);
+    font-weight: 400;
+    color: #3a444d;
+    margin-bottom: 0.5em;
+  }
+  
+  .pokemon-info span {
+    font-weight: 600;
+    color: #415B6A;
+  }
+  
+  .pokemon__type li,
+  .pokemon__abilities li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+  }
+  
+  .pokemon__type-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #415B6A;
+    margin-left: 5px;
+  }
+  
+  /* Evoluções */
+  .evolution-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1em;
+  }
+  
+  .evolution-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    background: #e3e3e3;
+    padding: 8px;
+    border-radius: 12px;
+    border: 2px solid #888;
+    box-shadow: inset -2px -2px 4px #ccc, inset 2px 2px 4px #666;
+    text-align: center;
+    position: relative;
+  }
+  
+  .evolution-block img {
+    width: 64px;
+    height: 64px;
+    margin-top: 4px;
+    image-rendering: pixelated;
+  }
+  
+  .evolution-label {
+    font-weight: 700;
+    color: #3a444d;
+    margin-bottom: 0.2em;
+  }
+  
+  /* Stats */
+  .pokemon__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .stat {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stat span {
+    font-weight: bold;
+    color: #3a444d;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  
+  .stat-bar-container {
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 16px;
+    position: relative;
+    border: 1px solid #333;
+    box-shadow: -1px 3px 0 #888, -2px 6px 0 #333;
+    padding: 10px;
+  }
+  
+  .stat-bar__fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+  
+  .stat-bar-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #ffcc00;
+    border-radius: 4px;
+    width: 100%;
+    padding: 2px;
+  }
+  
+  /* Scrollbar personalizada */
+  .pokemon-info::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .pokemon-info::-webkit-scrollbar-track {
+    background: #e3e3e3;
+    border-radius: 10px;
+  }
+  
+  .pokemon-info::-webkit-scrollbar-thumb {
+    background: #415B6A;
+    border-radius: 10px;
+    border: 2px solid #e3e3e3;
+  }
+  
+  .pokemon-info::-webkit-scrollbar-thumb:hover {
+    background: #3a444d;
+  }
+  
+  /* RESPONSIVIDADE */
+  @media (max-width: 1024px) {
+    aside {
+      right: 10%;
+      width: 22em;
+      top: 10%;
+      height: 40em;
+    }
+  
+    .pokemon-info {
+      height: 25em;
+    }
+  
+    .evolution-block {
+      width: 100%;
+    }
+  
+    .stat {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    aside {
+      right: 5%;
+      width: 20em;
+      height: 30em;
+    }
+  
+    .pokemon-info {
+      height: 22em;
+    }
+  
+    .evolution-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .stat-bar-container {
+      height: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    aside {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 90%;
+      height: auto;
+      margin-left: 1.3em;
+      margin-bottom: 2em;
+      margin-top: -0.1em;
+    }
+  
+    .pokemon-info {
+      height: auto;
+      padding: 0.5em;
+    }
+  
+    .evolution-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .stat {
+      width: 100%;
+    }
+  
+    .stat-bar-container {
+      height: 20px;
+      padding: 5px;
+    }
+  }
+

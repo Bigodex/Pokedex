@@ -6,7 +6,11 @@
 
   <!-- Links -->
   <link rel="icon" href="./favicons/favicon-16x16.png">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/aside.css">
+  <link rel="stylesheet" href="css/footer.css">
 
   <!-- Main JS -->
   <script defer src="./js/script.js"></script>
@@ -14,6 +18,9 @@
   <title>Pokédex</title>
 </head>
 <body>
+  <header class="header">
+    <img src="./images/logo.svg" alt="Pokédex Logo" class="header__logo">
+  </header>
   
   <main>
     <img src="#" alt="pokemon" class="pokemon__image">
@@ -27,18 +34,110 @@
       <input
         type="search"
         class="input__search"
-        placeholder="Name or Number"
+        placeholder="Pesquise por Nome ou Número..."
         required
       />
     </form>
 
-    <div class="buttons">
-      <button class="button btn-prev">Prev &lt;</button>
-      <button class="button btn-next">Next &gt;</button>
+    <div class="pesquisar-button">
+      <button class="button btn-procurar" id="pesquisar-btn">Pesquisar</button>
     </div>
 
-    <img src="./images/pokedex.png" alt="pokedex" class="pokedex">
+    <div class="buttons">
+      <button class="button btn-prev">&lt; Voltar </button>
+      <button class="button btn-next">Próximo &gt;</button>
+    </div>
+
+    <img src="./images/pokedex.svg" alt="pokedex" class="pokedex">
   </main>
 
+  <aside>
+    <img src="images/logo.svg" alt="logo" class="logo">
+  
+    <section class="pokemon-info">
+      <div class="trecho1">
+        
+      </div>
+      <h2>Habilidades</h2>
+      <ul class="pokemon__abilities">
+        <li>Habilidade 1 <span class="pokemon__type-label">(Tipo 1)</span></li>
+        <li>Habilidade 2 <span class="pokemon__type-label">(Tipo 2)</span></li>
+      </ul>
+
+      <h2>Tipo</h2>
+      <ul class="pokemon__type">
+        <li>Tipo 1</li>
+        <li>Tipo 2</li>
+      </ul>
+
+      <h2>Altura e Peso</h2>
+      <p class="pokemon__height">0.0 m</p>
+      <p class="pokemon__weight">0.0 kg</p>
+
+      <h2>Evoluções</h2>
+      <div class="evolution-container">
+        <div class="evolution-block">
+          <span class="evolution-label">Pré Evolução:</span>
+          <span class="pre-evolution">Nenhuma</span>
+          <img class="pre-evolution-img" src="" alt="Pré-evolução">
+        </div>
+        <div class="evolution-block">
+          <span class="evolution-label">Pós Evolução:</span>
+          <span class="evolution">Nenhuma</span>
+          <img class="evolution-img" src="" alt="Evolução">
+        </div>
+      </div>
+  
+      <h2>Stats</h2>
+      <div class="pokemon__stats">
+        <div class="stat">
+          <span>HP:</span>
+          <div class="stat-bar-container">
+            <span class="stat-hp">0</span>
+          </div>
+        </div>
+        <div class="stat">
+          <span>Ataque:</span>
+          <div class="stat-bar-container">
+            <span class="stat-attack">0</span>
+          </div>
+        </div>
+        <div class="stat">
+          <span>Defesa:</span>
+          <div class="stat-bar-container">
+            <span class="stat-defense">0</span>
+          </div>
+        </div>
+        <div class="stat">
+          <span>Velocidade:</span>
+          <div class="stat-bar-container">
+            <span class="stat-speed">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </aside>
+  
+  <footer class="footer">
+    <p>Made with <img src="./favicons/favicon-16x16.png" alt="Favicon" class="footer__favicon"> by Pedro Bigode</p>
+    <div class="footer__socials">
+      <a href="https://twitter.com" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" class="social-icon">
+      </a>
+      <a href="https://facebook.com" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://instagram.com" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" class="social-icon">
+      </a>
+      <a href="https://github.com" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+      </a>
+    </div>
+    </div>
+  </footer></div>
 </body>
 </html>
